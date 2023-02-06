@@ -32,4 +32,15 @@ tkinter.Label(window, background="gray", padx=5, pady=6, text="Adress").place(x=
 # making buttons
 save_button = tkinter.Button(window, text="Register", width=10, background="green").place(x=200, y=500)
 
+def save():
+    user_list = []
+    if password != Repeat_password:
+        return "password doesn't match"
+    elif Email in user_list:
+        return "this email already exists"
+    else:
+        user_list.append(list(First_name, Last_name, Email, Password, Country, City, Adress))
+        return "registered succesfully"
+
+
 window.mainloop()
