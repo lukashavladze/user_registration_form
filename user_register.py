@@ -14,9 +14,9 @@ Last_name = tkinter.Entry(window, background="white").place(x=130, y=100)
 Email = tkinter.Entry(window, background="white").place(x=130, y=150)
 Password = tkinter.Entry(window, background="white").place(x=130, y=200)
 Repeat_password = tkinter.Entry(window, background="white").place(x=130, y=250)
-tkinter.Entry(window, background="white").place(x=130, y=300)
-tkinter.Entry(window, background="white").place(x=130, y=350)
-tkinter.Entry(window, background="white").place(x=130, y=400)
+Country = tkinter.Entry(window, background="white").place(x=130, y=300)
+City = tkinter.Entry(window, background="white").place(x=130, y=350)
+Adress = tkinter.Entry(window, background="white").place(x=130, y=400)
 
 # titles beside labels
 tkinter.Label(window, background="gray", padx=5, pady=6, text="First Name").place(x=25, y=45)
@@ -28,5 +28,8 @@ tkinter.Label(window, background="gray", padx=5, pady=6, text="Country").place(x
 tkinter.Label(window, background="gray", padx=5, pady=6, text="City").place(x=25, y=345)
 tkinter.Label(window, background="gray", padx=5, pady=6, text="Adress").place(x=25, y=395)
 
+
+# making buttons
+save_button = tkinter.Button(window, text="Register", width=10, background="green").place(x=200, y=500)
 
 window.mainloop()
