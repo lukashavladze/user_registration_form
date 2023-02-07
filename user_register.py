@@ -44,7 +44,7 @@ tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="r
 tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="red", font=24).place(x=260, y=195)
 tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="red", font=24).place(x=260, y=245)
 
-# label for text again..
+# label for text again.
 tkinter.Label(window, background="gray", foreground="red", text="Fields marked * are required.", font=1).place(x=0, y=0)
 
 
