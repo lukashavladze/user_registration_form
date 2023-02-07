@@ -37,6 +37,16 @@ tkinter.Label(window, background="gray", padx=5, pady=6, text="Country").place(x
 tkinter.Label(window, background="gray", padx=5, pady=6, text="City").place(x=25, y=345)
 tkinter.Label(window, background="gray", padx=5, pady=6, text="Address").place(x=25, y=395)
 
+# making labels for "*" required symbol
+tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="red", font=24).place(x=260, y=45)
+tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="red", font=24).place(x=260, y=95)
+tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="red", font=24).place(x=260, y=145)
+tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="red", font=24).place(x=260, y=195)
+tkinter.Label(window, background="gray", padx=5, pady=6, text="*", foreground="red", font=24).place(x=260, y=245)
+
+# label for text again..
+tkinter.Label(window, background="gray", foreground="red", text="Fields marked * are required.", font=1).place(x=0, y=0)
+
 
 def text_label(display_text):
     # making label for displaying text "registered successfully" etc.
@@ -57,7 +67,11 @@ def save():
     f = Country.get()
     g = City.get()
     h = Address.get()
-    if any(c in x for x in user_list):
+    if not a.isalpha():
+        text_label("First name should contain only letters")
+    elif not b.isalpha():
+        text_label("Last name should contain only letters")
+    elif any(c in x for x in user_list):
         text_label("this email already exists")
     elif d != e:
         text_label("password doesn't match")
