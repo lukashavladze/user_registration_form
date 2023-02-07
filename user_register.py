@@ -1,5 +1,5 @@
 import tkinter
-import requests
+
 
 # making tkinter window
 window = tkinter.Tk()
@@ -23,9 +23,8 @@ Country = tkinter.Entry(window, background="white")
 Country.place(x=130, y=300)
 City = tkinter.Entry(window, background="white")
 City.place(x=130, y=350)
-Adress = tkinter.Entry(window, background="white")
-Adress.place(x=130, y=400)
-
+Address = tkinter.Entry(window, background="white")
+Address.place(x=130, y=400)
 
 
 # titles beside labels
@@ -36,7 +35,14 @@ tkinter.Label(window, background="gray", padx=5, pady=6, text="Password").place(
 tkinter.Label(window, background="gray", padx=5, pady=6, text="Repeat Password").place(x=25, y=245)
 tkinter.Label(window, background="gray", padx=5, pady=6, text="Country").place(x=25, y=295)
 tkinter.Label(window, background="gray", padx=5, pady=6, text="City").place(x=25, y=345)
-tkinter.Label(window, background="gray", padx=5, pady=6, text="Adress").place(x=25, y=395)
+tkinter.Label(window, background="gray", padx=5, pady=6, text="Address").place(x=25, y=395)
+
+
+def text_label(display_text):
+    # making label for displaying text "registered successfully" etc.
+    text = tkinter.StringVar()
+    text.set(display_text)
+    tkinter.Label(window, background="gray", textvariable=text, font=32).place(x=200, y=450)
 
 
 user_list = []
@@ -50,21 +56,18 @@ def save():
     e = Repeat_password.get()
     f = Country.get()
     g = City.get()
-    h = Adress.get()
+    h = Address.get()
     if any(c in x for x in user_list):
-        print("this email already exists")
+        text_label("this email already exists")
     elif d != e:
-        print("password doesn't match")
+        text_label("password doesn't match")
     else:
         user_list.append([a, b, c, d, f, g, h])
-        print(user_list)
-        print(len(user_list))
-        print("registered succesfully")
+        text_label("Registered successfully")
+
 
 # making buttons
 save_button = tkinter.Button(window, text="Register", width=10, height=2, background="green", command=save)
 save_button.place(x=200, y=500)
-
-
 
 window.mainloop()
