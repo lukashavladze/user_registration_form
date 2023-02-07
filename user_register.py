@@ -39,10 +39,10 @@ tkinter.Label(window, background="gray", padx=5, pady=6, text="City").place(x=25
 tkinter.Label(window, background="gray", padx=5, pady=6, text="Adress").place(x=25, y=395)
 
 
+user_list = []
 
 
 def save():
-    user_list = []
     a = First_name.get()
     b = Last_name.get()
     c = Email.get()
@@ -51,17 +51,15 @@ def save():
     f = Country.get()
     g = City.get()
     h = Adress.get()
-    print(c)
-    print(type(c))
-    if c in user_list:
+    if any(c in x for x in user_list):
         print("this email already exists")
     elif d != e:
         print("password doesn't match")
     else:
-        user_list.append(list([a, b, c, d, f, g, h]))
+        user_list.append([a, b, c, d, f, g, h])
         print(user_list)
+        print(len(user_list))
         print("registered succesfully")
-
 
 # making buttons
 save_button = tkinter.Button(window, text="Register", width=10, height=2, background="green", command=save)
